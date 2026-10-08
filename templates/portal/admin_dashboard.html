@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<div class="dashboard-head admin-head"><div class="container py-5"><span class="badge text-bg-light mb-2">ADMIN PORTAL</span><h1 class="fw-bold">Administration Center ⚙️</h1><p class="mb-0 text-white-50">Monitor users, roles and student records.</p></div></div>
+<div class="container py-5">
+<div class="row g-4">
+<div class="col-md-4"><div class="stat-card"><span>🎓</span><h2>{{ student_count }}</h2><p>Students</p></div></div>
+<div class="col-md-4"><div class="stat-card"><span>👨‍🏫</span><h2>{{ teacher_count }}</h2><p>Teachers</p></div></div>
+<div class="col-md-4"><div class="stat-card"><span>📋</span><h2>{{ record_count }}</h2><p>Total records</p></div></div>
+</div>
+<div class="row g-4 mt-2">
+<div class="col-md-6"><div class="card border-0 shadow-sm p-4 h-100"><h4>Django Admin</h4><p class="text-muted">Manage users, profiles, permissions and student records using Django's built-in admin interface.</p><a href="/admin/" class="btn btn-primary">Open admin panel</a></div></div>
+<div class="col-md-6"><div class="card border-0 shadow-sm p-4 h-100"><h4>Record management</h4><p class="text-muted">Admins can inspect, update and delete records. Deletion is protected by a custom permission.</p><a href="{% url 'record_list' %}" class="btn btn-outline-primary">View records</a></div></div>
+</div>
+</div>
+{% endblock %}

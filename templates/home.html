@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}EduPortal — Student Management{% endblock %}
+{% block content %}
+<section class="hero-section">
+    <div class="container py-5">
+        <div class="row align-items-center g-5 py-lg-5">
+            <div class="col-lg-7">
+                <span class="badge rounded-pill text-bg-light mb-3">Django Internship • Week 5</span>
+                <h1 class="display-4 fw-bold text-white">A smarter portal for students & teachers.</h1>
+                <p class="lead text-white-50 mt-3">
+                    Secure authentication, role-based dashboards, profiles, permissions and protected CRUD —
+                    all in one clean Django application.
+                </p>
+                <div class="d-flex gap-2 mt-4">
+                    <a href="{% url 'register' %}" class="btn btn-light btn-lg px-4">Create account</a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-light btn-lg px-4">Sign in</a>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="glass-card p-4">
+                    <div class="small text-white-50">PORTAL FEATURES</div>
+                    <div class="row g-3 mt-1">
+                        <div class="col-6"><div class="feature-tile">🔐<br><b>Authentication</b></div></div>
+                        <div class="col-6"><div class="feature-tile">👥<br><b>User Roles</b></div></div>
+                        <div class="col-6"><div class="feature-tile">🛡️<br><b>Permissions</b></div></div>
+                        <div class="col-6"><div class="feature-tile">📊<br><b>Dashboards</b></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container py-5">
+    <div class="text-center mb-4">
+        <span class="text-primary fw-semibold">WHY EDUPORTAL?</span>
+        <h2 class="fw-bold mt-2">Everything needed for Week 5</h2>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><div class="card-body"><h5>Role-based access</h5><p class="text-muted">Students, teachers and admins see only the features they are authorized to use.</p></div></div></div>
+        <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><div class="card-body"><h5>CBV architecture</h5><p class="text-muted">List, Detail, Create, Update and Delete views demonstrate reusable class-based design.</p></div></div></div>
+        <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><div class="card-body"><h5>User-friendly UI</h5><p class="text-muted">Responsive Bootstrap components, cards, alerts, forms and dashboards.</p></div></div></div>
+    </div>
+</section>
+{% endblock %}

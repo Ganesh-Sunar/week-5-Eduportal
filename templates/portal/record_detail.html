@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Record Details{% endblock %}
+{% block content %}
+<div class="container py-5">
+<div class="d-flex justify-content-between align-items-center mb-4"><div><span class="badge text-bg-primary">ACADEMIC RECORD</span><h2 class="fw-bold mt-2">{{ record.title }}</h2></div><a href="{% url 'record_list' %}" class="btn btn-outline-secondary">← Back</a></div>
+<div class="card border-0 shadow-sm"><div class="card-body p-4 p-lg-5">
+<div class="row g-4">
+<div class="col-md-6"><small class="text-muted">Student</small><h5>{{ record.student.get_full_name|default:record.student.username }}</h5></div>
+<div class="col-md-6"><small class="text-muted">Course</small><h5>{{ record.course }}</h5></div>
+<div class="col-md-4"><small class="text-muted">Attendance</small><h5>{{ record.attendance }}%</h5></div>
+<div class="col-md-4"><small class="text-muted">Grade</small><h5>{{ record.grade|default:"Not graded" }}</h5></div>
+<div class="col-md-4"><small class="text-muted">Added by</small><h5>{{ record.added_by.username }}</h5></div>
+<div class="col-12"><hr><small class="text-muted">Notes</small><p class="mt-2">{{ record.notes|default:"No notes added."|linebreaks }}</p></div>
+</div></div></div>
+</div>
+{% endblock %}
